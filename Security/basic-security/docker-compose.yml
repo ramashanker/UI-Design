@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  security-app:
+    image: falcon007/basic-security-app:latest
+    ports:
+      - 8381:8381
+    networks:
+      - basic-security
+  security-ui:
+    image: falcon007/basic-security-ui:latest
+    ports:
+      - 4040:80
+    networks:
+      - basic-security
+networks:
+  basic-security:
+    driver: bridge

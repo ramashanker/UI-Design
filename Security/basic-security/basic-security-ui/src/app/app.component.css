@@ -1,12 +1,12 @@
 nav{
     height:5vh;
     /*Or fixed pixel unit*/
-    background-color: rgb(105, 97, 141);
+    background-color: rgb(172, 177, 172);
    }
 footer{
     height:5vh;
     /*Or fixed pixel unit*/
-    background-color: rgb(105, 97, 141);;
+    background-color: rgb(185, 184, 189);;
    }
 
    section {

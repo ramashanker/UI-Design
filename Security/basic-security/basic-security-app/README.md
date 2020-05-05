@@ -71,8 +71,8 @@ image: <your repo name>/mongodboperation:latest
 Command to start:
 
 ```bash
-$ docker-compose -f docker-compose-basic-security.yml pull
-$ docker-compose -f docker-compose-basic-security.yml up
+$ docker-compose pull
+$ docker-compose up
 ```
 ### Running the application using Kubernetes.
 

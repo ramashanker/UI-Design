@@ -28,4 +28,45 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #Create Docker Image
 
-https://dev.to/usmslm102/containerizing-angular-application-for-production-using-docker-3mhi
+## Create Dockerfile
+
+````
+# Stage 1
+FROM node:12.16.1-alpine As builder
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2
+FROM nginx:1.15.8-alpine
+COPY --from=builder /usr/src/app/dist/basic-security-ui/ /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+````
+
+## Create Docker ignore
+
+````
+.git
+node_modules
+
+````
+## Build Docker image by default build latest
+
+````
+docker build . -t falcon007/basic-security-ui
+````
+
+## Running the docker image
+
+````
+docker run -p 4040:80 falcon007/basic-security-ui
+````
+
+### Push docker images
+
+```bash
+docker login
+$ docker push falcon007/basic-security-ui
+```

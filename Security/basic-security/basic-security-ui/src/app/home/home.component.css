@@ -1,0 +1,5 @@
+.image{
+    height:50em; background-size:cover; width:auto;
+    background-image:url('/assets/images/background.img');
+    background-position:absolute;
+  }
